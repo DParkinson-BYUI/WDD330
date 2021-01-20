@@ -9,7 +9,11 @@
     },
     {
       label: "Week 02 Application",
-      url: "week1/app.html"
+      url: "quiz/indexch4.html"
+    },
+    {
+      label: "Week 03 Application",
+      url: "week3/teamexercise.html"
     }
   ];
   
