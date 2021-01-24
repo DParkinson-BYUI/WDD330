@@ -8,11 +8,27 @@
       url: "week1/notes.html"
     },
     {
+      label: "Week 02 Notes",
+      url: "week2/notes.html"
+    },    
+    {
       label: "Week 02 Application",
       url: "quiz/indexch4.html"
     },
     {
-      label: "Week 03 Application",
+      label: "Week 02 Team Exercise",
+      url: "week2/teamexercise.html"
+    },    
+    {
+      label: "Week 03",
+      url: "week3/"
+    },    
+    {
+      label: "Week 03 Notes",
+      url: "week3/notes.html"
+    },        
+    {
+      label: "Week 03 Team Exercise",
       url: "week3/teamexercise.html"
     }
   ];
