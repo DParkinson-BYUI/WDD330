@@ -30,6 +30,18 @@
     {
       label: "Week 03 Team Exercise",
       url: "week3/teamexercise.html"
+    },    
+    {
+      label: "Week 04 Application",
+      url: "week4/eloquentjsch6vector.html"
+    },    
+    {
+      label: "Week 04 Notes",
+      url: "week4/notes.html"
+    },        
+    {
+      label: "Week 04 Team Exercise",
+      url: "week4/teamexercise.html"
     }
   ];
   
