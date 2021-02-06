@@ -42,6 +42,14 @@
     {
       label: "Week 04 Team Exercise",
       url: "week4/teamexercise.html"
+    },    
+    {
+      label: "Week 05 Notes",
+      url: "week5/notes.html"
+    },        
+    {
+      label: "Week 05 Team Exercise",
+      url: "week5/ta05/hikes.html"
     }
   ];
   
