@@ -50,7 +50,12 @@
     {
       label: "Week 05 Team Exercise",
       url: "week5/ta05/hikes.html"
+    },        
+    {
+      label: "Week 06 To Do App",
+      url: "toDoApp"
     }
+
   ];
   
   const orderedlist = document.querySelector("ol");

@@ -71,11 +71,12 @@ export default class Hikes {
   }
   // in order to show the details of a hike ontouchend we will need to attach a listener AFTER the list of hikes has been built. The function below does that.
   addHikeListener() {
-    // We need to loop through the children of our list and attach a listener to each, remember though that children is a nodeList...not an array. So in order to use something like a forEach we need to convert it to an array.
+    // We need to loop through the children of our list and attach a listener to each, remember though that children is a nodeList...not an array. 
+    // So in order to use something like a forEach we need to convert it to an array.
     const childrenArray = Array.from(this.parentElement.children);
     childrenArray.forEach(child => {
       child.addEventListener('touchend', e => {
-        // why currentTarget instead of target?
+        // invoke the correct Object that invoked this by using currentTarget instead of target
         this.showOneHike(e.currentTarget.dataset.name);
       });
     });
@@ -92,7 +93,7 @@ export default class Hikes {
   }
 }
 // End of Hikes class
-// methods responsible for building HTML.  Why aren't these in the class?  They don't really need to be, and by moving them outside of the exported class, they cannot be called outside the module...they become private.
+// Building HTML with these functions. These are helper methods to the class, they cannot be called outside the module by other code...they become private.
 function renderHikeList(parent, hikes) {
   hikes.forEach(hike => {
     parent.appendChild(renderOneHikeFull(hike));
