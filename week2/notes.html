@@ -12,24 +12,32 @@
     <h1><a href="../index.html">WDD 330 - Web Frontend Development</a></h1>
     <h2>Week02</h2>
     <h3>Notes</h3>
-    <ul>
-        <h4>Typeof</h4>
+    <h4>Typeof</h4>
+    <ul class="notesList">
         <li>typeof will find out the type of a value (ie if it's boolean, string, number, object)</li>
         <li>The operator is "typeof" and the string 'hello' is the operand when the statement goes like this " typeof
             'hello' "</li>
         <li>Example: 3 + 5. The operator is + and the numbers 3 and 5 are the operands.</li>
-        <h4>Note About Variables</h4>
+    </ul>
+    <h4>Note About Variables</h4>
+    <ul class="notesList">
         <li> Cannot use these words for variable names:</li>
-        <p> abstract, await, boolean, break, byte, case, catch, char, class, const, continue, debugger, default, delete,
-            do, double, else, enum, export, extends, false, final, finally, float, for, function, goto, if, implements,
-            import, in, instanceof, int, interface, let, long, native, new, null, package, private, protected, public,
-            return, short, static, super, switch, synchronized, this, throw, throws, transient, true, try, typeof, var,
-            volatile, void, while, with, yield, undefined, NaN, Infinity</p>
+    </ul>
+    <p> abstract, await, boolean, break, byte, case, catch, char, class, const, continue, debugger, default, delete,
+        do, double, else, enum, export, extends, false, final, finally, float, for, function, goto, if, implements,
+        import, in, instanceof, int, interface, let, long, native, new, null, package, private, protected, public,
+        return, short, static, super, switch, synchronized, this, throw, throws, transient, true, try, typeof, var,
+        volatile, void, while, with, yield, undefined, NaN, Infinity</p>
+    <ul class="notesList">
         <li>You should try to use const to declare most variables.</li>
-        <h4>ParseInt (also ParseFloat)</h4>
+    </ul>
+    <h4>ParseInt (also ParseFloat)</h4>
+    <ul class="notesList">
         <li>parseInt converts a string back into a number. It needs a parameter of how many numbers you want it to show.
             (Chapter 2)</li>
-        <h4>Arrays</h4>
+    </ul>
+    <h4>Arrays</h4>
+    <ul class="notesList">
         <li>In an array, when you delete a value in the array, the space is still there, its just undefined. The value
             returned is undefined.</li>
         <li>In an array, array.length - 1 will give you the value of the last item in the array. You have to subtract
@@ -40,21 +48,29 @@
             of the array. </li>
         <li>array.push(); means you are adding a value to the end of the array, and array.unshift() adds a value to the
             beginning. </li>
-        <h4>Sets</h4>
+    </ul>
+    <h4>Sets</h4>
+    <ul class="notesList">
         <li>Sets won't allow duplicates. This can be really useful in situations where you need to have unique values.
         </li>
         <li>Sets do not have index notation for inspecting individual entries, so you can't find the value of the first
             element in a set.</li>
-        <h4>Functions</h4>
+    </ul>
+    <h4>Functions</h4>
+    <ul class="notesList">
         <li>There are 3 ways to write a Function. function name {console.log('Hello');}</li>
         <li>You can also assign a function to a variable like this: const nameOfVariable = function nameOfFunction()
             {console.log ('Message');}</li>
         <li>Keep your code DRY (don't repeat yourself, use functions to perform the work over and over instead of
             repeating yourself.). </li>
-        <h4>Arrow Functions</h4>
+    </ul>
+    <h4>Arrow Functions</h4>
+    <ul class="notesList">
         <li>const square = x => x*x;</li>
         <li>const hello = () => alert('Hello World!');</li>
-        <h4>Map()</h4>
+    </ul>
+    <h4>Map()</h4>
+    <ul class="notesList">
         <li>Uses arrays to output information. For example: [1,2,3].map( square ) will give you the output of [1, 4, 9]
         </li>
         <li>So map() essentially can take each item in an array and do something to it.</li>
@@ -80,8 +96,6 @@
         for (let i = 10; i < 20; i++)
             console.log(i);
     </script>
-
-    </ul>
 </body>
 
 </html>

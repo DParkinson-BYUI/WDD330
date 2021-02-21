@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD330 Week 7 Notes</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <h1><a href="../index.html">WDD 330 - Web Frontend Development</a></h1>
+    <h2>Week 07 - Functions</h2>
+    <h3>Notes</h3>
+    <h4>Chapter 11 (Further Functions)</h4>
+    <ul class="notesList">
+        <li>The call() method is used to "call" a value of "this" inside a function.</li>
+    </ul>
+    <p>So here's an example:</p>
+    <pre>
+        <code>
+        const clark = { name: 'Clark' };
+        const bruce = { name: 'Bruce' };
+        sayHello.call(clark);
+        </code>
+    </pre>   
+        <p>The result is => 'Hello, my name is Clarke'<br>
+            So we are just calling it inside of another function, like a callback.</p>
+         
+    <ul class="notesList">
+        <li>The apply() method</li>
+    </ul>
+    <p>This works in the same way, but the arguments of the function have to be provided as an array, even if there's
+        only one argument.<br>
+        Example: sayHello.apply(null, [Bruce]);<br>
+        The null is required because it has to be the first argument in the apply() method.</p>
+    <ul class="notesList">
+        <li>If you use the call()method but you aren't using a function that has a "this" in it, you also need to use
+            the
+            null like this:
+        </li>
+    </ul>    
+    <p>square.call(null, 4) => this square function doesn't have a "this" in it, so if you use the call() method, you
+        have to use null as a parameter.</p>
+    <ul class="notesList">
+        <li>The <em><strong>spread operator</strong></em> can be used to split an array of values into separate
+            parameters.
+            I keep forgetting about the spread operator and what it does. So pay attention to this bullet point!</li>
+        <li>You can use the cache to store information on the stort term rather than using big functions to go get the
+            answer. It can look something like this:</li>
+    </ul>
+    <pre>
+        <code>
+        function square(x){
+            square.cache = square.cache || {};
+            if (!square.cache[x]) {
+            square.cache[x] = x*x;
+            }
+            return square.cache[x]
+            }
+            If you type square.cache; it gives you "{"3": 9, "-11": 121}"
+        </code>
+    </pre> 
+    <h4>Immediately Invoked Function Expressions (IIFE)</h4>
+    <ul class="notesList">
+        <li>You can invoke a function immediately by adding parenthesis at the end of the function and surrounding the
+            whole
+            thing in parenthesis like so:</li>
+    </ul>
+    <pre>
+        <code>
+        (function(){
+            const temp = 'World';
+            console.log(`Hello ${temp}`);
+            })();
+        </code>
+    </pre>
+
+    <ul class="notesList">
+        <li>If you name variables inside an IFFE, those are just temporary variables.</li>
+        <li>You can use 'use strict'; inside an IFFE to avoid any sloppy coding practices. Placing it inside an IFFE
+            helps
+            control just one function rather than trying to apply it to a whole page.</li>
+    </ul>
+    <h4>Init-Time Branching</h4>
+    <ul class="notesList">
+        <li>Something about initializing functions the first time they're called. I don't really get it yet. </li>
+    </ul>
+    <h4>Recursive Functions</h4>
+    <ul class="notesList">
+        <li>It invokes itself until a certain condition is met.</li>
+        <li>Here is an example of a recursive function:</li>
+    </ul>
+    <pre>
+        <code>
+        function collatz(n, sequence=[n]) {
+            if (n === 1){
+            return `Sequence took ${sequence.length} steps. It was ${sequence}`;
+            }
+            if (n%2 === 0) {
+            n = n/2;
+            } else {
+            n = 3*n + 1;
+            }
+            return collatz(n,[...sequence,n]);
+            }
+        </code>
+    </pre>    
+    <ul class="notesList">
+        <li>This function above is interesting because the return is calling the function again, but uses the spread
+            operator. This keeps going until the sequence reaches 1.</li>
+    </ul>
+    <h4>Event Loop</h4>
+    <ul class="notesList">
+        <li>I watched a video by Phillip Roberts about event loops. When a function is invoked, it goes onto the call
+            stack.
+        </li>
+        <li>If it needs to go to the Web API, it sits there for a second then drops down to the queue.</li>
+        <li>The queue can only use the even loop to push back onto the call stack when the call stack is empty.</li>
+    </ul>
+    <h4>Promises</h4>
+    <ul class="notesList">
+        <li>A promise represents the future result of an asynchronous operation. Promises don't do anything that can't
+            already
+            be achieved using callbacks, but they help simplify the process, and avoid the convoluted code that can
+            result
+            from using multiple callbacks. Here's an example;</li>
+    </ul>
+    <pre>
+        <code>
+        const promise = new Promise( (resolve, reject) => {
+            // initialization code goes here
+            if (success) {
+            resolve(value);
+            } else {
+            reject(error);
+            }
+            });
+        </code>
+    </pre>   
+    <ul class="notesList">
+        <li>resolve() and reject() are methods that deal with a promise.</li>
+        <li>setTimeout() is a function that helps delay something</li>
+        <li>The then() method is used to deal with the outcome of the settled promise. It accepts 2 arguments.</li>
+    </ul>
+    <ul>
+        <li>1st argument is a <em>fulfilment function</em> that's called when a promise is resolved. So whatever the
+            result is from resolve() will be passed on to the then()</li>
+        <li>2nd argement is a rejection function that's called if a promise is rejected. Same thing, whatever data is
+            returned from the reject() will be passed on to the then()</li>
+    </ul>
+    <ul class="notesList">
+        <li>Here's an example: promise.then( result => console.log(`Yes! I rolled a ${result}`), result =>
+            console.log(`Drat! ... I rolled a ${result}`) );</li>
+        <li>If a promise fails, you can use the catch() method: promise.catch( result => console.log(`Drat! ... I rolled
+            a
+            ${result}`));</li>
+        <li>You can chain multiple promises together.</li>
+    </ul>
+
+    <h4>Async Functions</h4>
+    <ul class="notesList">
+    <li>"async" is a keyword written before the word function to make an asynchronous function act like a syncronous
+        function.</li>
+    <li>You use the "await" operator before the function that is asynchronous</li>
+    <li>So rather than having the code just move forward while it waits for the asynchronous code to run, the "await"
+        operator (keyword) makes it stop and wait for it to resolve before moving on.</li>
+    </ul>
+    <h4>Closures</h4>
+    <ul class="notesList">
+    <li>Variables and scope: const created inside a function can only be seen inside that function</li>
+    <li>If there is a function within a function, the inside function can see the variables in it's function and the one
+        its nested it.</li>
+    <li>A <em>closure</em> is formed when the inner function is returned by the outer function, maintaining access to
+        any variables declared inside the enclosing function.</li>
+    <li>Closures not only have access to variables declared in a parent function's scope, they can also change the value
+        of these variables.</li>
+    </ul>
+    <h4>Generators</h4>
+    <ul class="notesList">
+    <li>They use the asterisk * after the word function like this: function* nameGoesHere(){}</li>
+    <li>None of the code will run until the next() method is called and used</li>
+    <li>Generator functions use the keyword "yield" instead of "return". The benefit of this is the state of the value
+        returned is rememebered the next time yield is called.</li>
+    </ul>
+    <h4>Pure Functions</h4>
+    <ul class="notesList">
+    <li>I don't need to write too much about pure functions but its found in this chapter.</li>
+    </ul>
+    <h4>Higher Order Functions</h4>
+    <ul class="notesList">
+    <li>Higher-order functions are functions that accept another function as an argument, or return another function as
+        a result, or both.</li>
+    </ul>
+    <h4>Currying</h4>
+    <ul class="notesList">
+    <li>Uses just a part of a function instead of the whole thing.</li>
+    <li>Currying allows you to turn a single function into a series of functions instead.</li>
+    </ul>
+    <h3>Chapter 13 - AJAX</h3>
+    <ul class="notesList">
+        <li>Ajax stand for Asynchronous JavaScript and XML.</li>
+        <li>This is the primary technology that allows web pages to be updated dynamically with new data, or without refreshing the page, and without locking up the browser/page.</li>
+        <li>JavaScript is usually used to make the Ajax calls to a server for data</li>
+        <li>XML was the format originally used to transmit the data, but today JSON has become dominate.</li>
+        <li>Today most people use the Fetch API to send and retrieve data.  Fetch returns promises avoiding the need for callbacks.</li>
+        <li>The Fetch response has an "ok" property (boolean) that indicates if the call was successful or not.</li>
+        <li>If the ok property is false the called failed and more details can be found in the "statusText" property.</li>
+        <li>Sometime the call sends back a redirect url which you can call to get the newest or more appropriate source.</li>
+        <li>There are several primary HTTP verbs used today</li>
+    </ul>
+          <ul>
+            <li>GET - retrieves data, shouldn't make changes to the data source</li>
+            <li>PUT - changes the data source in an idempotent way.  If you do the same PUT call with the same data ten times, it should have the end result as if it where only called once.</li>
+            <li>POST - change the data source in so that each call continues to alter the data beyond what the first called did. Also a catch all for commands to the server.</li>
+            <li>PATCH - a partial update to the data source.</li>
+            <li>DELETE - tells the data source to remove a given record.</li>
+          </ul>  
+      
+    <ul class="notesList">
+    <li>API = Application Programming Interface</li>
+    <li>fetch() method grabs a URL: fetch('https://example.com/data')</li>
+    <li>When we use a fetch on a url, we can make it a promise statement by adding the then() and catch() methods.</li>
+    <li>You can use the .statusText property to give you the exact code of the error message so you can look it up.</li>
+    <li>Here's an example of a redirect() method using a response promise:</li>
+    </ul>
+    <pre>
+        <code>
+        fetch(url)
+        .then( response => response.redirect(newURL)); // redirects to another URL
+        .then( // do something else )
+        .catch( error => console.log('There was an error: ', error))
+        </code>
+    </pre>      
+    <ul class="notesList">
+    <li>The <em>text()</em> method takes a stream of text from the response, reads it to completion and then returns a
+        promise
+        that resolves to a USVSting object that can be treated as a string in JavaScript.</li>
+    <li>The blob() method takes raw data and turns it into something usable in JS.</li>
+    <li>You can create your own custom response() object. Example: const response = new Response( 'Hello!', {<em>data
+            input goes here</em> )};</li>
+</body>
+
+</html>

@@ -54,7 +54,15 @@
     {
       label: "Week 06 To Do App",
       url: "toDoApp"
-    }
+    },    
+    {
+      label: "Week 07 Notes",
+      url: "week7/notes.html"
+    },        
+    {
+      label: "Week 07 Team Exercise",
+      url: "week7/ta07/hiking.html"
+    },
 
   ];
   

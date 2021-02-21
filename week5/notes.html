@@ -29,7 +29,9 @@
         <li>Lint programs find non-error sloppy code</li>
         <li>alert(something) can be used like a breakpoint</li>
         <li>Use console to show info</li>
+    </ul>
         <h4>Create JavaScript errors - Error Objects</h4>
+    <ul class="notesList">
         <li>Create a new error constructor function like this:
         <div class="codeBlock">
             const error = new Error('Oops, something went wrong');
@@ -51,11 +53,13 @@
                 <br>
             </div>
         </li>
+    </ul>
         <h4>Throw and Catch Exceptions</h4>
+        <ul class="notesList">
         <li>function squareRoot(number) {<br>
                 <div class="codeBlock">
                     'use strict';<br>
-                    if (number < 0) {<br>
+                    if (number &lt; 0) {<br>
                         throw new RangeError('You can't find the square root of negative numbers')<br>
                         }<br>
                         return Math.sqrt(number);<br>
@@ -77,13 +81,16 @@
         <li>The output will be "7i" when I give it an input of -49</li>
         <li>Use try, catch, and finally</li>
         <li>Write tests</li>
-        <h4>Test Driven Development (TDD)</h4>        
+    </ul>
+        <h4>Test Driven Development (TDD)</h4> 
+    <ul class="notesList">       
                 <li>Write tests (that initially fail)</li>
                 <li>Write code to pass the tests</li>
                 <li>Refactor the code</li>
                 <li>Test refactored code</li>
                 <li>Write more tests for new features</li>
         <li>Jest</li>
+    </ul>
 </body>
 
 </html>
