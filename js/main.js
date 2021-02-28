@@ -60,9 +60,25 @@
       url: "week7/notes.html"
     },        
     {
+      label: "Week 07 Examples",
+      url: "week7/week7demos.html"
+    },
+    {
       label: "Week 07 Team Exercise",
       url: "week7/ta07/hiking.html"
+    }, 
+    {
+      label: "Week 08 Notes",
+      url: "week8/notes.html"
     },
+    {
+      label: "Week 08 Team Exercise",
+      url: "week8/ta08/"
+    },
+    {
+      label: "Week 08 Example",
+      url: "week8/examples/"
+    },      
 
   ];
   
