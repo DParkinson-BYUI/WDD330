@@ -79,7 +79,18 @@
       label: "Week 08 Example",
       url: "week8/examples/"
     },      
-
+    {
+      label: "Week 09 Notes",
+      url: "week9/notes.html"
+    },
+    {
+      label: "Week 09 Team Exercise",
+      url: "week9/ta09/"
+    },
+    {
+      label: "Week 09 Example",
+      url: "quiz/indexch14.html"
+    }
   ];
   
   const orderedlist = document.querySelector("ol");
