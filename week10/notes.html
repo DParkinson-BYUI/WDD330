@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD330 Week 10 Notes</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <h1><a href="../index.html">WDD 330 - Web Frontend Development</a></h1>
+    <h2>Week 10 - Fetch and Form validation</h2>
+    <h3>Notes</h3>
+    <h4>Validating Forms</h4>
+    <p>Examples of form validation:</p>
+    <ul class="notesList">
+        <li>This field is required</li>
+        <li>Please enter info in this format: xxx-xxxx-xx</li>
+        <li>Please enter a valid address</li>
+        <li>Password needs to contain a letter number, and special character</li>
+        <li>Client-side form validation. Validate before sending to server</li>
+        <li>required, minlength, maxlength, min and max (for numerical input), type, pattern</li>
+        <li>have a :valid property for css</li>
+        <li>have an :invalid property for css</li>
+        <li>have an :out-of-range property sometimes</li>
+        <li>badInput, patternMismatch, rangeOverflow, rangeUnderflow, stepMismatch, tooLong, tooShort, typeMismatch,
+            valueMissing, customError (check these out sometime)</li>
+        <li>fetch is vanilla whereas jQuery.ajax() uses jQuery</li>
+        <li>use json() method, Request and Response objects</li>
+    </ul>
+    <p>Validating forms using JavaScript:</p>
+    <ul class="notesList">
+        <li>HTMLButtonElement (represents a 'button'element)</li>
+        <li>HTMLFieldSetElement (represents a 'fieldset' element)</li>
+        <li>HTMLInputElement (represents an 'input' element)</li>
+        <li>HTMLOutputElement (represents an 'output' > element)</li>
+        <li>HTMLSelectElement (represents a 'select' element)</li>
+        <li>HTMLTextAreaElement (represents a 'textarea' element)</li>
+    </ul>
+    <h3>Using the Fetch API</h3>
+    <p>Example of using fetch to get a JSON file:</p>
+    <pre>
+    <code>
+      fetch('http://example.com/movies.json')
+        .then(response => response.json())
+        .then(data => console.log(data));
+    </code>
+    </pre>
+    <p>This way of using fetch is just an HTTP response, not the actual JSON.</p>
+    <ul class="notesList">
+        <li>The simplest use of fetch() takes one argument and returns a promise containing the response (a Response
+            object).</li>
+    </ul>
+    <h3>Sending a request with credentials included</h3>
+    <ul class="notesList">
+        <li>To cause browsers to send a request with credentials included, even for a cross-origin call, add
+            credentials:
+            'include' to the init object you pass to the fetch() method.</li>
+        <li>Files can be uploaded using an HTML input type="file" input element, FormData() and fetch().</li>
+        <li>Files can be uploaded using an HTML input type="file" multiple input element, FormData() and fetch().</li>
+        <li>Both of the "input" and the "multiple" above would go inside the input tag.</li>
+    </ul>
+    <h3>Checking that a fetch was successful</h3>
+    <ul class="notesList">
+        <li>An accurate check for a successful fetch() would include checking that the promise resolved, then checking
+            that
+            the Response.ok property has a value of true.</li>
+    </ul>
+    <pre>
+            <code>
+                fetch('flowers.jpg')
+                .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok');
+                }
+                return response.blob();
+                })
+                .then(myBlob => {
+                myImage.src = URL.createObjectURL(myBlob);
+                })
+                .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+                });
+            </code>
+            </pre>
+    <h3>Headers</h3>
+    <ul class="notesList">
+        <li>The Headers interface allows you to create your own headers object via the Headers() constructor.</li>
+        <li>A headers object is constructed of multiple name and value pairs.</li>
+        <li>You can combine a lot of this infomation, like Response objects "response.ok" and such, with headers and new
+            Blob's</li>
+    </ul>
+</body>
+
+</html>

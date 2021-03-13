@@ -90,6 +90,14 @@
     {
       label: "Week 09 Example",
       url: "quiz/indexch14.html"
+    },
+    {
+      label: "Week 10 Notes",
+      url: "week10/notes.html"
+    },    
+    {
+      label: "Week 10 Team Exercise",
+      url: "week10/ta10/"
     }
   ];
   
