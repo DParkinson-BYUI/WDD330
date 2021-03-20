@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ta11.css">
+    <title>Team Activity 11</title>
+</head>
+
+<body>
+    
+    <section><p>Note: this will not work on github<br>(there's not a server running)</p></section>
+    <header>
+        <h1 class="text-center">Authentication Example</h1>
+        <nav></nav>
+      </header>
+    <!-- <div class="body">
+        <form id="login">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value='user1@email.com'></input><br>
+            <label for="password">Password:</label>
+            <input type="text" id="password" name="password" value='user1'><br><br>
+        </form>
+
+        <button id="button">Login</button>
+        <div id="token-display"></div>
+    </div> -->
+    <div id="errors" class="errors hidden"></div>
+    <div id="login">
+        <form>
+          <div>
+            <label for="username">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="Username"
+              value="user1@email.com"
+            />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Password"
+            />
+          </div>
+          <button type="button" class="btn btn-primary center-block">
+            Login
+          </button>
+        </form>    
+        <div id="token-display"></div>
+    </div>
+
+    <div id="content" class="hidden">
+        <form name="postForm">
+          <div>
+            <label for="title">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              name="title"
+              placeholder="title"
+              required
+            />
+          </div>
+          <div>
+            <label for="content">Content</label>
+            <input
+              type="text"
+              class="form-control"
+              name="content"
+              placeholder="content"
+              required
+            />
+          </div>
+          <div id="postError"></div>
+  
+          <input type="submit" id="createSubmit" />
+        </form>
+        <ul id="list"></ul>
+      </div>    
+
+    <div class="footer"></div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+<script type="module" src="week11.js"></script>
+
+</html>

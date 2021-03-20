@@ -98,6 +98,10 @@
     {
       label: "Week 10 Team Exercise",
       url: "week10/ta10/"
+    },    
+    {
+      label: "Week 11 Team Exercise",
+      url: "week11/client/week11.html"
     }
   ];
   

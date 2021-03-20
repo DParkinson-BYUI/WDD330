@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+}
+
+.errors {
+    border: 1px solid darkred;
+    background-color: lightcoral;
+    padding: 0.5em;
+}
+
+form input {
+    margin: 0.5em 0;
+    font-size: 1.4em;
+    background-color: antiquewhite;
+    width: 300px;
+}
+
+form button {
+    font-size: 1.2em;
+    padding: 0.4em;
+    background-color: cornflowerblue;
+}
+
+input:invalid {
+    box-shadow: 0 0 5px 1px red;
+}
+
+.hidden {
+    display: none;
+}
+
+#login {
+    padding: 5px;
+    margin: 30px;
+    width: 85%;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+}
+
+#button {
+    padding: 5px;
+    margin: 10px;
+    border: none;
+    width: 200px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#username {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: dotted rgb(140, 216, 235) 1px;
+}
+
+#password {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: dotted rgb(140, 216, 235) 1px;
+}
