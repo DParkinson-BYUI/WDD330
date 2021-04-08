@@ -102,6 +102,10 @@
     {
       label: "Week 11 Team Exercise",
       url: "week11/client/week11.html"
+    },    
+    {
+      label: "Final Project",
+      url: "nasaApiPictures/"
     }
   ];
   
